@@ -13,7 +13,14 @@ I've commented each AppleScript thoroughly so it should easy to understand what 
 
 # Usage
 
-The .applescript files are the plaintext AppleScripts and there are corresponding compiled .scpt versions for each script. You can execute either version but executing the compiled .scpt version is technically more performant.
+The AppleScripts are generated from the stencil in `templates/action.stencil`, by the `main.py` Python script. Each keyboard shortcut is defined in the python script and when it runs a AppleScript per action is generated.
+You will only need the generated `.scpt` to execute the action
+
+To update the generated scripts:
+```
+$ pip3 install -r requirements.txt
+$ python3 main.py
+```
 
 The way in which I use these AppleScripts are via an Elgato Stream Deck. Using the Stream Deck, create a button with a System > Open action and set the 'App / File' field to the full path of the .scpt file. I've also included the icons I use for my buttons (see the icon-*.png files in this repository). Note that Stream Deck will need the `Automation` persmission under MacOS System Preferences > Security & Privacy > Automation. The first time you press the Stream Deck button MacOS should prompt you to grant this permission to Stream Deck.
 
